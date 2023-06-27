@@ -1,0 +1,60 @@
+/* globales */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+body{background-color: bisque;}
+a{text-decoration: none;color: inherit;}
+li{list-style: none;}
+main{padding: 1rem;}
+span{color: crimson;font-weight: bold;text-transform: uppercase; margin: 1rem 0; cursor: pointer;}
+
+/* component */
+.overlay{
+    height: 0; /* propieda que se modificará con JS  */
+    width: 100%;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0,.9);
+    overflow-x: hidden;
+    transition: .5s;
+    display: flex;
+    justify-content: center;
+    place-items: center;
+}  .overlay-content{
+        text-align: center;
+        font-size: 2rem;
+        color: rgb(222, 222, 222);
+        width: 100%;
+    }   .overlay-content a{
+            display: block;
+            transition: .3s;
+    }   .overlay-content a:hover, .overlay-content a:focus{
+            color: white;
+        }   .overlay-content li{
+            padding-top: .8rem;
+        }
+    .overlay .overlayClose{
+        position: absolute;
+        top: 0;
+        right: 1rem;
+        font-size: 4rem;
+        line-height: 1;
+        color: white;
+    }
+
+@media screen and (min-width: 500px){
+    .overlay-content{
+        font-size: 2.5rem;
+    }
+    .overlay .overlayClose{
+        font-size: 5rem;
+        line-height: .8;
+        right: 1.5;
+    }
+}
